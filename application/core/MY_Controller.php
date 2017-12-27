@@ -6,7 +6,7 @@ class MY_Controller extends CI_Controller
     {
         parent::__construct();
         
-        session_start();
+        if (!isset($_SESSION)) session_start();
         
         if ($this->session->userdata('login') == TRUE){
             $this->data['have_login'] = TRUE;
